@@ -1,0 +1,42 @@
+
+.section-4-main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-4-lottie-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+#lottie-section-4 {
+  align-self: center;
+  height: 500px;
+  width: 500px;
+  transform: translateX(-300px);
+  animation-fill-mode: forwards;
+}
+
+#section-4-text-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.big-text-4 {
+  max-width: 550px;
+}
+
+.small-text-4 {
+  max-width: 550px;
+}
