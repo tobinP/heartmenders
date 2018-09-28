@@ -3,8 +3,8 @@ var lottieAnimationInProgres = false;
 var backtrackInProgress = false;
 var isGoingBackToSection3 = false;
 
-var translateRight = "translate-right-animation";
-var translateLeft = "translate-left-animation";
+var translateRight = "translate-right-animation2";
+var translateLeft = "translate-left-animation2";
 
 var section3LottieAnimation = "section-fade-in";
 
@@ -63,22 +63,39 @@ $(document).ready(function() {
 			console.log('index: ' + index);			
 			
 			if (index == 1) {
+        ////////////////////////////////////////
+        // Section 1
+        ////////////////////////////////////////
 				rotateBackground();
 				commonHeader.removeClass("hide-header").addClass("show-header");
 				fadeSection(section2, section1);
-				addXAxisTranslation(section2LottieDiv, section2TextDiv)
+        // addXAxisTranslation(section2LottieDiv, section2TextDiv)
+        addXAxisStagger(section2TextDiv, translateLeft);
 				playLottie(lottie2);
 			} else if (index == 2) {
+        ////////////////////////////////////////
+        // Section 2
+        ////////////////////////////////////////
 				backtrackInProgress = false;
 				rotateBackground();
-				removeXAxisTranslation(section2LottieDiv, section2TextDiv);
+				removeXAxisStagger(section2TextDiv, translateLeft);
 				if (direction === 'up') {
+          commonHeader.removeClass("show-header").addClass("hide-header");
 					fadeSection(section1, section2);
-					commonHeader.removeClass("show-header").addClass("hide-header");
 				} else {
 					fadeSection(section7, section2);
-					playLottie(lottie3_1);
-					lottie3Row1.addClass(section3LottieAnimation);
+          playLottie(lottie3_1);
+          lottie3Row1.addClass(section3LottieAnimation);
+          
+          lottie3Row1.addClass(section3LottieAnimation);
+          lottie3Row2.addClass(section3LottieAnimation);
+          lottie3Row3.addClass(section3LottieAnimation);
+          lottie3Row4.addClass(section3LottieAnimation);
+          lottie3Row5.addClass(section3LottieAnimation);
+          playLottie(lottie3_2);
+          playLottie(lottie3_3);
+          playLottie(lottie3_4);
+          playLottie(lottie3_5);
 
 					//////////////////////////////////////////////
 					// fadeSection(section8, section2);
@@ -87,39 +104,50 @@ $(document).ready(function() {
 				}
 				
 			} else if (index == 3) {
+        ////////////////////////////////////////
+        // Section 3_1
+        ////////////////////////////////////////
 				isGoingBackToSection3 = false;
 				if (direction === 'up') {
 					goBackToSection2();
 				} else {
-					// start lottie 3_2
 					lottie3Row2.addClass(section3LottieAnimation);
 					playLottie(lottie3_2);
 				}
 			} else if (index == 4) {
+        ////////////////////////////////////////
+        // Section 3_2
+        ////////////////////////////////////////
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					// start lottie 3_3
 					lottie3Row3.addClass(section3LottieAnimation);
 					playLottie(lottie3_3);
 				}
 			} else if (index == 5) {
+        ////////////////////////////////////////
+        // Section 3_3
+        ////////////////////////////////////////
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					// start lottie 3_4
 					lottie3Row4.addClass(section3LottieAnimation);
 					playLottie(lottie3_4);
 				}
 			} else if (index == 6) {
+        ////////////////////////////////////////
+        // Section 3_4
+        ////////////////////////////////////////
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					// start lottie 3_5
 					lottie3Row5.addClass(section3LottieAnimation);
 					playLottie(lottie3_5);
 				}
 			} else if (index == 7) {
+        ////////////////////////////////////////
+        // Section 3_5
+        ////////////////////////////////////////
 				if (direction === 'up' && !isGoingBackToSection3) {
 					setTimeout(removeAnimationForSection3, 1000);
 					goBackToSection2()
@@ -127,11 +155,15 @@ $(document).ready(function() {
 					rotateBackground();
 					setTimeout(removeAnimationForSection3, 1000);
 					fadeSection(section8, section7);
-          addXAxisTranslation(section4LottieDiv, section4TextDiv);
+          addXAxisStagger(section4TextDiv, translateLeft);
           playLottie(lottie4);
 				}
 			} else if (index == 8) {
-				rotateBackground();
+        ////////////////////////////////////////
+        // Section 4
+        ////////////////////////////////////////
+        rotateBackground();
+        removeXAxisStagger(section4TextDiv, translateLeft);
 				if (direction == 'up') {
 					isGoingBackToSection3 = true;
 					$.fn.pagepiling.moveTo(3);
@@ -146,19 +178,25 @@ $(document).ready(function() {
           playLottie(lottie5);
 				}
 			} else if (index == 9) {
+        ////////////////////////////////////////
+        // Section 5
+        ////////////////////////////////////////
 				rotateBackground();
 				removeXAxisTranslation(section5TextDiv, section5LottieDiv)
 				if (direction == 'up') {
-					addXAxisTranslation(section4LottieDiv, section4TextDiv)
-					// removeXAxisTranslation(section5TextDiv, section5LottieDiv)
+					addXAxisStagger(section4TextDiv, translateLeft);
 					fadeSection(section8, section9);
 				} else {
-					addXAxisTranslation(section6LottieDiv, section6TextDiv)
+          addXAxisStagger(section6TextDiv, translateLeft);
           fadeSection(section10, section9);
           playLottie(lottie6);
 				}
 			} else if (index == 10) {
-				rotateBackground();
+        ////////////////////////////////////////
+        // Section 6
+        ////////////////////////////////////////
+        rotateBackground();
+        removeXAxisStagger(section6TextDiv, translateLeft);
 				removeXAxisTranslation(section6LottieDiv, section6TextDiv)
 				if (direction == 'up') {
 					addXAxisTranslation(section5TextDiv, section5LottieDiv)
@@ -168,7 +206,28 @@ $(document).ready(function() {
 				}
 			}
 		}
-	});
+  });
+  
+  function addXAxisStagger(container, direction) {
+    container.children().eq(0).addClass(direction)
+    setTimeout(_ => container.children().eq(1).addClass(direction), 250);
+    var count = container.children().length;
+    if (count == 3) {
+      setTimeout(_ => container.children().eq(2).addClass(direction), 500);
+    }
+  }
+
+  function removeXAxisStagger(container, direction) {
+    setTimeout( _ => {
+      container.children().eq(0).removeClass(direction)
+      container.children().eq(1).removeClass(direction)
+
+      var count = container.children().length;
+      if (count == 3) {
+        container.children().eq(2).removeClass(direction);
+      }
+    }, 1000);
+  }
 
 	function removeXAxisTranslation(div1, div2) {
 		setTimeout(() => { 
@@ -193,7 +252,8 @@ $(document).ready(function() {
 		$.fn.pagepiling.moveTo(2);
 		setTimeout(removeAnimationForSection3, 1000);
 		fadeSection(section2, section7);
-		addXAxisTranslation(section2LottieDiv, section2TextDiv)
+    // addXAxisTranslation(section2LottieDiv, section2TextDiv)
+    addXAxisStagger(section2TextDiv, translateLeft);
 		playLottie(lottie2);
 	}
 
@@ -212,7 +272,6 @@ $(document).ready(function() {
 			loop: false,
 			autoplay: false,
 			path: './lotties/section-' + sectionNumber + '.json'
-			// path: './lotties/capital-b.json'
 		});
 	}
 

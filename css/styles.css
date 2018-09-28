@@ -70,7 +70,7 @@
 
 .big-text {
   height: auto;
-  font-family: NotoSerif;
+  font-family: 'Noto Serif', serif;
   font-size: 40px;
   font-weight: normal;
   font-style: normal;
@@ -83,7 +83,7 @@
 
 .small-text {
   height: auto;
-  font-family: NotoSans;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
   font-weight: normal;
   font-style: normal;
@@ -97,7 +97,7 @@
 .learn-button {
   width: 226px;
   height: 39px;
-  font-family: NotoSans;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
   font-weight: bold;
   font-style: normal;
@@ -113,13 +113,13 @@
 .clockwise-rotation {
   animation-name: clockwiseRotation;
   animation-duration: 900ms;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
 }
 
 .counter-rotation {
   animation-name: counterRotation;
   animation-duration: 900ms;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in;
 }
 
 .section-fade-out {
@@ -141,10 +141,24 @@
   animation-fill-mode: forwards;
 }
 
+.translate-left-animation2 {
+  animation-name: toLeft2;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out; 
+  animation-fill-mode: forwards;
+}
+
 .translate-right-animation {
   animation-name: toRight;
   animation-duration: 1000ms;
   animation-timing-function: linear; 
+  animation-fill-mode: forwards;
+}
+
+.translate-right-animation2 {
+  animation-name: toRight2;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out; 
   animation-fill-mode: forwards;
 }
 
@@ -153,9 +167,19 @@
   to {transform: translateX(0px);}
 }
 
+@keyframes toLeft2 {
+  from {transform: translateX(30px);}
+  to {transform: translateX(0px);}
+}
+
 @keyframes toRight {
   from {transform: translateX(-300px);}
   to {transform: translateX(100px);}
+}
+
+@keyframes toRight2 {
+  from {transform: translateX(-30px);}
+  to {transform: translateX(0px);}
 }
 
 @keyframes clockwiseRotation {

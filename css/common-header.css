@@ -15,7 +15,7 @@
   .common-header-label {
     float: right;
     margin: 40px 20px 40px 20px;
-    font-family: OpenSans;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 18px;
     color: #3b4f64;
     vertical-align: middle;
