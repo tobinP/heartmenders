@@ -67,22 +67,6 @@
     max-width: 844px;
 }
 
-/* .section-1-learn-button {
-    width: 226px;
-    height: 39px;
-    font-family: NotoSans;
-    font-size: 16px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.69;
-    letter-spacing: 0.8px;
-    text-align: center;
-    color: #3b4f64;
-    background-color: transparent;
-    border: 2px solid #3b4f64;
-} */
-
 .section-1-right-container {
     float: right;
     width: 45%;
@@ -102,7 +86,7 @@
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    font-family: NotoSans;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20px;
     font-weight: bold;
     font-style: normal;

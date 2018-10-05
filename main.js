@@ -3,10 +3,11 @@ var lottieAnimationInProgres = false;
 var backtrackInProgress = false;
 var isGoingBackToSection3 = false;
 
-var translateRight = "translate-right-animation2";
-var translateLeft = "translate-left-animation2";
+var translateRight = "translate-right-animation";
+var translateLeft = "translate-left-animation";
 
-var section3LottieAnimation = "section-fade-in";
+var fadeIn = "section-fade-in";
+var fadeOut = "section-fade-out";
 
 $(document).ready(function() {
 	var background = $("#back1");
@@ -23,7 +24,7 @@ $(document).ready(function() {
 	var section10 = $("#section-10");
 
 	var section2LottieDiv = $("#lottie-section-2");
-	var section2TextDiv = $("#section-2-text-container");
+  var section2TextDiv = $("#section-2-outer-text-container");
 
 	var lottie3Row1 = $("#section-3-row-1");
 	var lottie3Row2 = $("#section-3-row-2");
@@ -33,15 +34,15 @@ $(document).ready(function() {
 
 	var lottie4Div = $("#lottie-section-4");
 	var section4LottieDiv = $("#lottie-section-4");
-	var section4TextDiv = $("#section-4-text-container");
+	var section4TextDiv = $("#section-4-outer-text-container");
 
 	var lottie5Div = $("#lottie-section-5");
 	var section5LottieDiv = $("#lottie-section-5");
-	var section5TextDiv = $("#section-5-text-container");
+	var section5TextDiv = $("#section-5-outer-text-container");
 
 	var lottie6Div = $("#lottie-section-6");
 	var section6LottieDiv = $("#lottie-section-6");
-	var section6TextDiv = $("#section-6-text-container");
+	var section6TextDiv = $("#section-6-outer-text-container");
 
 	var lottie2 = loadLottie(2);
 	var lottie3_1 = loadLottie('3-1');
@@ -67,9 +68,8 @@ $(document).ready(function() {
         // Section 1
         ////////////////////////////////////////
 				rotateBackground();
-				commonHeader.removeClass("hide-header").addClass("show-header");
-				fadeSection(section2, section1);
-        // addXAxisTranslation(section2LottieDiv, section2TextDiv)
+        commonHeader.removeClass("hide-header").addClass("show-header");
+        fadeSection(section2, section1);
         addXAxisStagger(section2TextDiv, translateLeft);
 				playLottie(lottie2);
 			} else if (index == 2) {
@@ -81,21 +81,20 @@ $(document).ready(function() {
 				removeXAxisStagger(section2TextDiv, translateLeft);
 				if (direction === 'up') {
           commonHeader.removeClass("show-header").addClass("hide-header");
-					fadeSection(section1, section2);
+          fadeSection(section1, section2);
 				} else {
 					fadeSection(section7, section2);
           playLottie(lottie3_1);
-          lottie3Row1.addClass(section3LottieAnimation);
+          lottie3Row1.addClass(fadeIn);
           
-          lottie3Row1.addClass(section3LottieAnimation);
-          lottie3Row2.addClass(section3LottieAnimation);
-          lottie3Row3.addClass(section3LottieAnimation);
-          lottie3Row4.addClass(section3LottieAnimation);
-          lottie3Row5.addClass(section3LottieAnimation);
-          playLottie(lottie3_2);
-          playLottie(lottie3_3);
-          playLottie(lottie3_4);
-          playLottie(lottie3_5);
+          // lottie3Row2.addClass(fadeIn);
+          // lottie3Row3.addClass(fadeIn);
+          // lottie3Row4.addClass(fadeIn);
+          // lottie3Row5.addClass(fadeIn);
+          // playLottie(lottie3_2);
+          // playLottie(lottie3_3);
+          // playLottie(lottie3_4);
+          // playLottie(lottie3_5);
 
 					//////////////////////////////////////////////
 					// fadeSection(section8, section2);
@@ -111,7 +110,7 @@ $(document).ready(function() {
 				if (direction === 'up') {
 					goBackToSection2();
 				} else {
-					lottie3Row2.addClass(section3LottieAnimation);
+					lottie3Row2.addClass(fadeIn);
 					playLottie(lottie3_2);
 				}
 			} else if (index == 4) {
@@ -121,7 +120,7 @@ $(document).ready(function() {
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					lottie3Row3.addClass(section3LottieAnimation);
+					lottie3Row3.addClass(fadeIn);
 					playLottie(lottie3_3);
 				}
 			} else if (index == 5) {
@@ -131,7 +130,7 @@ $(document).ready(function() {
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					lottie3Row4.addClass(section3LottieAnimation);
+					lottie3Row4.addClass(fadeIn);
 					playLottie(lottie3_4);
 				}
 			} else if (index == 6) {
@@ -141,7 +140,7 @@ $(document).ready(function() {
 				if (direction === 'up') {
 					goBackToSection2()
 				} else {
-					lottie3Row5.addClass(section3LottieAnimation);
+					lottie3Row5.addClass(fadeIn);
 					playLottie(lottie3_5);
 				}
 			} else if (index == 7) {
@@ -167,13 +166,10 @@ $(document).ready(function() {
 				if (direction == 'up') {
 					isGoingBackToSection3 = true;
 					$.fn.pagepiling.moveTo(3);
-					removeXAxisTranslation(section4LottieDiv, section4TextDiv)
 					fadeSection(section7, section8);
 					playLottie(lottie3_1);
-					lottie3Row1.addClass(section3LottieAnimation);
+					lottie3Row1.addClass(fadeIn);
 				} else {
-					addXAxisTranslation(section5TextDiv, section5LottieDiv);
-					removeXAxisTranslation(section4LottieDiv, section4TextDiv)
           fadeSection(section9, section8);
           playLottie(lottie5);
 				}
@@ -182,10 +178,10 @@ $(document).ready(function() {
         // Section 5
         ////////////////////////////////////////
 				rotateBackground();
-				removeXAxisTranslation(section5TextDiv, section5LottieDiv)
 				if (direction == 'up') {
 					addXAxisStagger(section4TextDiv, translateLeft);
-					fadeSection(section8, section9);
+          fadeSection(section8, section9);
+          playLottie(lottie4);
 				} else {
           addXAxisStagger(section6TextDiv, translateLeft);
           fadeSection(section10, section9);
@@ -197,10 +193,9 @@ $(document).ready(function() {
         ////////////////////////////////////////
         rotateBackground();
         removeXAxisStagger(section6TextDiv, translateLeft);
-				removeXAxisTranslation(section6LottieDiv, section6TextDiv)
 				if (direction == 'up') {
-					addXAxisTranslation(section5TextDiv, section5LottieDiv)
-					fadeSection(section9, section10);
+          fadeSection(section9, section10);
+          playLottie(lottie5);
 				} else {
 					
 				}
@@ -209,42 +204,26 @@ $(document).ready(function() {
   });
   
   function addXAxisStagger(container, direction) {
-    container.children().eq(0).addClass(direction)
-    setTimeout(_ => container.children().eq(1).addClass(direction), 250);
+    container = container.children();
+    container.children().eq(0).addClass(direction + 500);
+    container.children().eq(1).addClass(direction + 1000);
     var count = container.children().length;
     if (count == 3) {
-      setTimeout(_ => container.children().eq(2).addClass(direction), 500);
+      container.children().eq(2).addClass(direction + 1500);
     }
   }
 
   function removeXAxisStagger(container, direction) {
+    container = container.children();
     setTimeout( _ => {
-      container.children().eq(0).removeClass(direction)
-      container.children().eq(1).removeClass(direction)
-
+      container.children().eq(0).removeClass(direction + 500);
+      container.children().eq(1).removeClass(direction + 1000);
       var count = container.children().length;
       if (count == 3) {
-        container.children().eq(2).removeClass(direction);
+        container.children().eq(2).removeClass(direction + 1500);
       }
     }, 1000);
   }
-
-	function removeXAxisTranslation(div1, div2) {
-		setTimeout(() => { 
-			// console.log("removing: " + div1);
-			// console.log("removing: " + div2);
-			div1.removeClass(translateRight);
-			div2.removeClass(translateLeft);
-		}, 1000);
-		
-	}
-
-	function addXAxisTranslation(div1, div2) {
-		// console.log("adding: " + div1);
-		// console.log("adding: " + div2);
-		div1.addClass(translateRight);
-		div2.addClass(translateLeft);
-	}
 
 	function goBackToSection2() {
 		rotateBackground();
@@ -252,17 +231,16 @@ $(document).ready(function() {
 		$.fn.pagepiling.moveTo(2);
 		setTimeout(removeAnimationForSection3, 1000);
 		fadeSection(section2, section7);
-    // addXAxisTranslation(section2LottieDiv, section2TextDiv)
     addXAxisStagger(section2TextDiv, translateLeft);
 		playLottie(lottie2);
 	}
 
 	function removeAnimationForSection3() {
-		lottie3Row1.removeClass(section3LottieAnimation);
-		lottie3Row2.removeClass(section3LottieAnimation);
-		lottie3Row3.removeClass(section3LottieAnimation);
-		lottie3Row4.removeClass(section3LottieAnimation);
-		lottie3Row5.removeClass(section3LottieAnimation);
+		lottie3Row1.removeClass(fadeIn);
+		lottie3Row2.removeClass(fadeIn);
+		lottie3Row3.removeClass(fadeIn);
+		lottie3Row4.removeClass(fadeIn);
+		lottie3Row5.removeClass(fadeIn);
 	}
 
 	function loadLottie(sectionNumber) {
@@ -280,9 +258,9 @@ $(document).ready(function() {
 		lottie.play();
 	}
 
-	function fadeSection(fadeIn, fadeOut) {
-		fadeOut.removeClass("section-fade-in").addClass("section-fade-out");
-		fadeIn.removeClass("section-fade-out").addClass("section-fade-in");
+	function fadeSection(fadeInSection, fadeOutSection) {
+		fadeOutSection.removeClass(fadeIn).addClass(fadeOut);
+		fadeInSection.removeClass(fadeOut).addClass(fadeIn);
 	}
 
 	function rotateBackground() {

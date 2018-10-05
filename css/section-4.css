@@ -21,13 +21,18 @@
   align-self: center;
   height: 500px;
   width: 500px;
-  transform: translateX(-300px);
   animation-fill-mode: forwards;
 }
 
-#section-4-text-container {
+#section-4-outer-text-container {
   height: 100%;
   width: 50%;
+  display: flex;
+  justify-content: center;
+  animation-fill-mode: forwards;
+}
+
+.section-4-inner-text-container {
   display: flex;
   justify-content: center;
   flex-direction: column;

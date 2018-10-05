@@ -1,42 +1,10 @@
-#section-2 {
-  opacity: 0.0;
+#section-1 {
   animation-fill-mode: forwards;
 }
 
-#section-3 {
-  opacity: 0.0;
-}
-
-#section-4 {
-  opacity: 0.0;
-}
-
-#section-5 {
-  opacity: 0.0;
-}
-
-#section-6 {
-  opacity: 0.0;
-}
-
-#section-7 {
-	opacity: 0.0;
-	animation-fill-mode: forwards;
-}
-
-#section-8 {
+#section-2, #section-3, #section-4, #section-5, #section-6, #section-7, #section-8, #section-9, #section-10 {
   opacity: 0.0;
   animation-fill-mode: forwards;
-}
-
-#section-9 {
-	opacity: 0.0;
-	animation-fill-mode: forwards;
-}
-
-#section-10 {
-	opacity: 0.0;
-	animation-fill-mode: forwards;
 }
 
 #pp-nav {
@@ -124,7 +92,7 @@
 
 .section-fade-out {
   animation-name: sectionFadeOut;
-  animation-duration: 900ms;
+  animation-duration: 500ms;
   animation-timing-function: linear;
 }
 
@@ -134,50 +102,54 @@
   animation-timing-function: linear;
 }
 
-.translate-left-animation {
+.translate-left-animation500 {
   animation-name: toLeft;
-  animation-duration: 1000ms;
-  animation-timing-function: linear; 
-  animation-fill-mode: forwards;
-}
-
-.translate-left-animation2 {
-  animation-name: toLeft2;
   animation-duration: 500ms;
   animation-timing-function: ease-in-out; 
   animation-fill-mode: forwards;
 }
 
-.translate-right-animation {
-  animation-name: toRight;
+.translate-left-animation1000 {
+  animation-name: toLeft;
   animation-duration: 1000ms;
-  animation-timing-function: linear; 
+  animation-timing-function: ease-in-out; 
   animation-fill-mode: forwards;
 }
 
-.translate-right-animation2 {
-  animation-name: toRight2;
+.translate-left-animation1500 {
+  animation-name: toLeft;
+  animation-duration: 1500ms;
+  animation-timing-function: ease-in-out; 
+  animation-fill-mode: forwards;
+}
+
+.translate-right-animation500 {
+  animation-name: toRight;
   animation-duration: 500ms;
+  animation-timing-function: ease-in-out; 
+  animation-fill-mode: forwards;
+}
+
+.translate-right-animation1000 {
+  animation-name: toRight;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out; 
+  animation-fill-mode: forwards;
+}
+
+.translate-right-animation1500 {
+  animation-name: toRight;
+  animation-duration: 1500ms;
   animation-timing-function: ease-in-out; 
   animation-fill-mode: forwards;
 }
 
 @keyframes toLeft {
-  from {transform: translateX(300px);}
-  to {transform: translateX(0px);}
-}
-
-@keyframes toLeft2 {
   from {transform: translateX(30px);}
   to {transform: translateX(0px);}
 }
 
 @keyframes toRight {
-  from {transform: translateX(-300px);}
-  to {transform: translateX(100px);}
-}
-
-@keyframes toRight2 {
   from {transform: translateX(-30px);}
   to {transform: translateX(0px);}
 }

@@ -21,18 +21,21 @@
   align-self: center;
   height: 500px;
   width: 500px;
-  /* transform: translateX(-300px); */
   animation-fill-mode: forwards;
 }
 
-#section-2-text-container {
+#section-2-outer-text-container {
   height: 100%;
   width: 50%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  /* transform: translateX(30px); */
   animation-fill-mode: forwards;
+}
+
+.section-2-inner-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .big-text-2 {
@@ -46,18 +49,5 @@
 }
 
 .learn-button {
-  /* width: 226px;
-  height: 39px; */
   transform: translateX(30px);
-  /* font-family: 'Noto Sans', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.69;
-  letter-spacing: 0.8px;
-  text-align: center;
-  color: #3b4f64;
-  background-color: transparent;
-  border: 2px solid #3b4f64; */
 }

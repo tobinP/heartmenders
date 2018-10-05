@@ -10,21 +10,32 @@
 	flex-wrap: wrap;
 }
 
+.section-5-lottie-container {
+	height: 100%;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+}
+
 #lottie-section-5 {
 	align-self: center;
 	height: 500px;
 	width: 500px;
-	margin-right: 250px;
 	animation-fill-mode: forwards;
 }
 
-#section-5-text-container {
-	height: 100%;
-	width: 40%;
-	margin-left: 80px;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
+#section-5-outer-text-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  animation-fill-mode: forwards;
+}
+
+.section-5-inner-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .big-text-5 {
@@ -33,11 +44,4 @@
 
 .small-text-5 {
 	max-width: 550px;
-}
-
-.section-5-lottie-container {
-	height: 100%;
-	width: 50%;
-	display: flex;
-	justify-content: center;
 }
