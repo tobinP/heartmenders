@@ -15,13 +15,12 @@
 	width: 90%;
 	display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .section-3-row-item {
 	height: 290px;
-  width: 300px;
+  width: 250px;
 	opacity: 0.0;
 	animation-fill-mode: forwards;
 }

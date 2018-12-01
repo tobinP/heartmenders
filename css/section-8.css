@@ -1,0 +1,33 @@
+.section-8-main-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.section-8-left-container {
+	height: 100%;
+	width: 50%;
+	display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#section-8-text-container {
+  align-self: center;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#lottie-section-8 {
+	align-self: center;
+	height: 334px;
+	width: 550px;
+	animation-fill-mode: forwards;
+}

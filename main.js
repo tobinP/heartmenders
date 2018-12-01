@@ -21,9 +21,10 @@ $(document).ready(function() {
 	var section7 = $("#section-7");
 	var section8 = $("#section-8");
 	var section9 = $("#section-9");
-	var section10 = $("#section-10");
+  var section10 = $("#section-10");
+  var section11 = $("#section-11");
+  var section12 = $("#section-12");
 
-	var section2LottieDiv = $("#lottie-section-2");
   var section2TextDiv = $("#section-2-outer-text-container");
 
 	var lottie3Row1 = $("#section-3-row-1");
@@ -32,17 +33,12 @@ $(document).ready(function() {
 	var lottie3Row4 = $("#section-3-row-4");
 	var lottie3Row5 = $("#section-3-row-5");
 
-	var lottie4Div = $("#lottie-section-4");
-	var section4LottieDiv = $("#lottie-section-4");
 	var section4TextDiv = $("#section-4-outer-text-container");
-
-	var lottie5Div = $("#lottie-section-5");
-	var section5LottieDiv = $("#lottie-section-5");
 	var section5TextDiv = $("#section-5-outer-text-container");
-
-	var lottie6Div = $("#lottie-section-6");
-	var section6LottieDiv = $("#lottie-section-6");
-	var section6TextDiv = $("#section-6-outer-text-container");
+  var section6TextDiv = $("#section-6-outer-text-container");
+  var section7_1TextDiv = $("#section-7-1-text-container");
+  var section7_2TextDiv = $("#section-7-2-text-container");
+  var section8TextDiv = $("#section-8-text-container");
 
 	var lottie2 = loadLottie(2);
 	var lottie3_1 = loadLottie('3-1');
@@ -52,7 +48,10 @@ $(document).ready(function() {
 	var lottie3_5 = loadLottie('3-5');
 	var lottie4 = loadLottie(4);
 	var lottie5 = loadLottie(5);
-	var lottie6 = loadLottie(6);
+  var lottie6 = loadLottie(6);
+  var lottie7_1 = loadLottie('7-1');
+  var lottie7_2 = loadLottie('7-2');
+  var lottie8 = loadLottie(8);
 
 	$('#pagepiling').pagepiling({
 		verticalCentered: false,
@@ -86,20 +85,6 @@ $(document).ready(function() {
 					fadeSection(section7, section2);
           playLottie(lottie3_1);
           lottie3Row1.addClass(fadeIn);
-          
-          // lottie3Row2.addClass(fadeIn);
-          // lottie3Row3.addClass(fadeIn);
-          // lottie3Row4.addClass(fadeIn);
-          // lottie3Row5.addClass(fadeIn);
-          // playLottie(lottie3_2);
-          // playLottie(lottie3_3);
-          // playLottie(lottie3_4);
-          // playLottie(lottie3_5);
-
-					//////////////////////////////////////////////
-					// fadeSection(section8, section2);
-					// addXAxisTranslation(section4LottieDiv, section4TextDiv);
-					//////////////////////////////////////////////
 				}
 				
 			} else if (index == 3) {
@@ -196,6 +181,32 @@ $(document).ready(function() {
 				if (direction == 'up') {
           fadeSection(section9, section10);
           playLottie(lottie5);
+				} else {
+					fadeSection(section11, section10);
+          playLottie(lottie7_1);
+          playLottie(lottie7_2);
+				}
+			} else if (index == 11) {
+        ////////////////////////////////////////
+        // Section 7
+        ////////////////////////////////////////
+        rotateBackground();
+				if (direction == 'up') {
+          fadeSection(section10, section11);
+          playLottie(lottie6);
+				} else {
+          fadeSection(section12, section11);
+          // need to play section 8 lottie here
+				}
+			} else if (index == 12) {
+        ////////////////////////////////////////
+        // Section 8
+        ////////////////////////////////////////
+        rotateBackground();
+				if (direction == 'up') {
+          fadeSection(section11, section12);
+          playLottie(lottie7_1);
+          playLottie(lottie7_2);
 				} else {
 					
 				}
